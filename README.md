@@ -15,6 +15,7 @@ An e-commerce website to shop for books, music, movies, housewares, electronics,
 * Kevin Phan - kevphn
 * Kenny Phan - kennyphan100
 * Steven Franchetto - sFranchetto
+* Joseph Pagliuca - Otterboi
 
 ## Technologies & Techniques: 
 * PHP
