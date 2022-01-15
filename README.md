@@ -6,7 +6,7 @@ Implement a simplified version of Amazon.
 ## Description
 An e-commerce website to shop for books, music, movies, housewares, electronics, toys, and many other goods.
 
-## Core Features
+## Core Features:
 * Browse for available items
 * Add items to the shopping cart
 * Check out
