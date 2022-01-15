@@ -13,6 +13,7 @@ An e-commerce website to shop for books, music, movies, housewares, electronics,
 
 ## Team Members:
 * Kevin Phan - kevphn
+* Kenny Phan - kennyphan100
 
 ## Technologies & Techniques: 
 * PHP
