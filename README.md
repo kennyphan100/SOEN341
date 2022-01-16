@@ -16,6 +16,7 @@ An e-commerce website to shop for books, music, movies, housewares, electronics,
 * Kenny Phan - kennyphan100
 * Steven Franchetto - sFranchetto
 * Joseph Pagliuca - Otterboi
+* Thamina Akther-t-akther
 
 ## Technologies & Techniques: 
 * PHP
