@@ -17,6 +17,7 @@ An e-commerce website to shop for books, music, movies, housewares, electronics,
 * Steven Franchetto - sFranchetto
 * Joseph Pagliuca - Otterboi
 * Thamina Akther-t-akther
+* Karim Tabbara - karim-tabbara
 
 ## Technologies & Techniques: 
 * PHP
