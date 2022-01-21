@@ -9,7 +9,7 @@ An e-commerce website to shop for books, music, movies, housewares, electronics,
 ## Core Features:
 * Browse for available items
 * Add items to the shopping cart
-* Check out
+* Checkout
 
 ## Team Members:
 * Kevin Phan - kevphn
