@@ -1,8 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
+        <!-- Project Logo -->
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <img src="{{ asset('images/logo.png') }}" class="w-48" alt="...">
             </a>
         </x-slot>
 
@@ -40,7 +41,7 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center mt-4 justify-between">
                 @if (Route::has('password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
