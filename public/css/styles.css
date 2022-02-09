@@ -6,7 +6,7 @@
 }
 
 #page-content {
-    min-height: 100vh;
+    min-height: 101vh;
 }
 
 html {
@@ -69,11 +69,6 @@ img {
     color: #767676;
     margin: 0;
     padding: 0;
-}
-
-.form-control:focus {
-    border-color: #ffffff !important;
-    box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
 }
 
 .navbar-form input {
@@ -796,3 +791,39 @@ input.mail_bt::placeholder {
 #start_here:hover {
     color: black;
 }
+
+.contact-succ {
+    margin-top: 20px;
+    background-color: lightgreen;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    color: #155724;
+    padding: 10px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#contact-div {
+    text-align: center;
+    min-height: 105vh;
+}
+
+#contact-form {
+    display: inline-block;
+}
+
+#contact-p {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.contact-error {
+    color: red;
+}
+
+.form-group label {
+
+}
+
