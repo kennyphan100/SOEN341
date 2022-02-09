@@ -30,7 +30,7 @@
                            <li><a href="#">Gift Ideas</a></li>
                            <li><a href="#">New Releases</a></li>
                            <li><a href="#">Today's Deals</a></li>
-                           <li><a href="#">Customer Service</a></li>
+                           <li><a href="{{ route('contact.create') }}">Contact Us</a></li>
                         </ul>
                      </div>
                   </div>
@@ -107,14 +107,9 @@
       </div>
 
       <div class="container" id="page-content">
-         {{-- SESSION FLASH MESSAGE --}}
-         @if(session('status'))
-               <div class="alert alert-success">
-                  {{ session('status') }}
-               </div>
-         @endif
-   
+
          @yield('content')
+         
       </div>
       
       <div class="footer_section layout_padding">
