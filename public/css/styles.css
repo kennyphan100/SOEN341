@@ -297,6 +297,22 @@ button {
 
 /* opennav bar end */
 
+#first_slide {
+    bottom: -10px;
+}
+
+#second_slide {
+    position: absolute;
+    bottom: 200px;
+    left: 800px;
+}
+
+#third_slide {
+    position: absolute;
+    bottom: 200px;
+    left: -400px;
+}
+
 
 /* Styles for wrapping the search box start */
 .main {
@@ -331,7 +347,6 @@ button {
 }
 
 .login_menu li a:hover {
-    /* color: #f26522; */
     border: 2px solid white;
     padding: 3px;
 }
@@ -361,9 +376,6 @@ button {
 }
 
 a:hover {
-    /* color: #f26522; */
-    /* border: 2px solid white;
-    padding: 3px; */
     text-decoration: underline;
 }
 
@@ -372,45 +384,13 @@ a:hover {
 .banner_section {
     width: 100%;
     float: left;
-    padding-bottom: 60px;
-}
+    padding-top: 0px;
+    margin-bottom: 100px;
 
-.banner_taital {
-    width: 100%;
-    font-size: 40px;
-    color: rgb(9, 29, 64);
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.buynow_bt {
-    width: 170px;
-    margin: 0 auto;
-    padding-top: 30px;
-}
-
-.buynow_bt a {
-    width: 100%;
-    float: left;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #252525;
-    text-align: center;
-    padding: 10px 0px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.buynow_bt a:hover {
-    border: 2px solid white;
-    padding: 3px;
-    color: #ffffff;
 }
 
 .carousel-item img {
-    height: 550px;
+    height: 400px;
 }
 
 .carousel-text-title {
@@ -420,16 +400,25 @@ a:hover {
 
 .carousel-text-description {
     color: rgb(255, 153, 0);
+    font-size: 2em;
 }
 
 #my_slider .carousel-control-next {
     right: 20px;
-    top: 230px;
+    top: 170px;
 }
 
 #my_slider .carousel-control-prev {
     left: 20px;
-    top: 230px;
+    top: 170px;
+}
+
+#my_slider .carousel-control-prev:hover {
+    background-color: rgb(168, 137, 74);
+}
+
+#my_slider .carousel-control-next:hover {
+    background-color: rgb(168, 137, 74);
 }
 
 #my_slider .carousel-control-next,
@@ -455,7 +444,11 @@ a:hover {
 .book_section, .electronic_section, .watches_section {
     width: 100%;
     float: left;
-    padding-bottom: 150px;
+    padding-bottom: 100px;
+}
+
+.watches_section {
+    padding-bottom: 50px;
 }
 
 .title_section {
@@ -774,3 +767,32 @@ input.mail_bt::placeholder {
 
 
 /* copyright section end */
+
+#sign_in_footer {
+    text-align: center;
+    padding: 60px 0;
+}
+
+#sign_in_footer #first {
+    font-weight: 500;
+}
+
+#sign_in_footer input {
+    background-color: rgb(255, 153, 0);
+    padding: 5px 120px;
+    border: none;
+    border-radius: 5px;
+}
+
+.line {
+    margin: 0;
+    padding: 0;
+}
+
+#start_here {
+    color: rgb(255, 153, 0);
+}
+
+#start_here:hover {
+    color: black;
+}

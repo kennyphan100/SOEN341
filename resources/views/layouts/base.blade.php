@@ -92,7 +92,7 @@
                                                 <a href="{{ route('register') }}" class="text">Register</a>
                                             @endif
 
-                                            <a href="{{ route('login') }}" class="text">Log in</a>
+                                            <a href="{{ route('login') }}" class="text">Sign in</a>
                                         @endauth
                                     </div>
                                 @endif
