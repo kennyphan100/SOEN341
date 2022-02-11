@@ -192,15 +192,21 @@
    </div>
 </div>
 
-<div id="sign_in_footer">
-   <p class="line" id="first">See personalized recommendations</p>
-
-   <a href="{{ route('login') }}">
-      <input type="button" value="Sign in" class="line">
-   </a>
-   
-   <p class="line">New Customer? <a id="start_here" href="{{ route('register') }}" style="">Start here</a></p>
-</div>
-
+@if (Route::has('login'))
+   <div class="">
+      @auth
+      @else
+         <div id="sign_in_footer">
+            <p class="line" id="first">See personalized recommendations</p>
+         
+            <a href="{{ route('login') }}">
+               <input type="button" value="Sign in" class="line">
+            </a>
+            
+            <p class="line">New Customer? <a id="start_here" href="{{ route('register') }}" style="">Start here</a></p>
+         </div>
+      @endauth
+   </div>
+@endif
 
 @endsection

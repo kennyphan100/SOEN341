@@ -66,7 +66,7 @@
                      </ul>
                   </div>
                   <div class="main">
-                     <div class="input-group">
+                     <div class="input-group" id="search-bar">
                         <input type="text" class="form-control" placeholder="Search for item">
                         <div class="input-group-append">
                            <button class="btn btn-secondary" type="button" style="background-color: rgb(9, 29, 64); border-color:rgb(9, 29, 64); ">
@@ -78,15 +78,25 @@
                   <div class="header_box">
                      <div class="login_menu">
                         <ul>
-                           <li><a href="#">
-                              <span class="">Cart</span></a>
+                           <li>
+                              <a href="#"><span class="">Cart</span></a>
                            </li>
-                           <li><a href="#">
+                           <li>
+                              <a href=""><a href="{{ url('/dashboard') }}" class="text">{{ Auth::user()->name ?? "" }}</a></a>
+                           </li>
+                           <li>
                               <span class="" style="margin: 0px">
                                 @if (Route::has('login'))
                                     <div class="">
                                         @auth
-                                            <a href="{{ url('/dashboard') }}" class="text">Dashboard</a>
+                                          <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
+                                                <x-dropdown-link :href="route('logout')"
+                                                      onclick="event.preventDefault();
+                                                               this.closest('form').submit();">
+                                                   {{ __('Logout') }}
+                                                </x-dropdown-link>
+                                          </form>
                                         @else
                                             @if (Route::has('register'))
                                                 <a href="{{ route('register') }}" class="text">Register</a>
