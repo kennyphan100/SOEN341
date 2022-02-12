@@ -56,7 +56,7 @@
                        Categories
                      </button>
                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                       <li><a class="dropdown-item" href="#">Books</a></li>
+                       <li><a class="dropdown-item" href="{{ route('products.index') }}">Books</a></li>
                        <li><a class="dropdown-item" href="#">Electronics</a></li>
                        <li><a class="dropdown-item" href="#">Jewellery & Watches</a></li>
                        <li><a class="dropdown-item" href="#">Health & Beauty</a></li>

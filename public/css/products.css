@@ -1,0 +1,31 @@
+.title{
+    position: relative;
+    color:black;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+.container{
+    text-align: center;
+}
+
+.price1 {
+    text-decoration: underline;
+    color: orange;
+}
+
+.name1 {
+    font-size: 20px;
+    color: black;
+}
+
+.genre1 {
+    color:gray;
+    font-size: 12px;
+}
+
+img {
+    width: 150px;
+    height: 225px;
+}
