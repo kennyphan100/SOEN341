@@ -1,26 +1,35 @@
-.title{
-    position: relative;
+.banner_bg_main {
+    margin-bottom: 50px;
+}
+
+.title {
     color:black;
     text-align: center;
     text-decoration: underline;
-    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 3em;
+    letter-spacing: 2px;
 }
 
-.container{
+.container {
     text-align: center;
 }
 
-.price1 {
+.product_price {
     text-decoration: underline;
-    color: orange;
+    color: rgb(255, 153, 0);;
 }
 
-.name1 {
+.product_name {
     font-size: 20px;
     color: black;
 }
 
-.genre1 {
+.product_name a:hover {
+    color: rgb(255, 153, 0);
+}
+
+.product_description {
     color:gray;
     font-size: 12px;
 }
