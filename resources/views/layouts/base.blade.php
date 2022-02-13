@@ -79,7 +79,7 @@
                      <div class="login_menu">
                         <ul>
                            <li>
-                              <a href="#"><span class="">Cart</span></a>
+                              <a href="{{ url('/cart') }}"><span class="">Cart</span></a>
                            </li>
                            <li>
                               <a href=""><a href="{{ url('/dashboard') }}" class="text">{{ Auth::user()->name ?? "" }}</a></a>

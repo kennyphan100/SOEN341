@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ require __DIR__.'/auth.php';
 
 Route::get('contact', [ContactFormController::class, 'create'])->name('contact.create');
 Route::post('contact', [ContactFormController::class, 'store'])->name('contact.store');
+
+Route::get('/cart', [CartController::class, 'cart']);
