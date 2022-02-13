@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ Route::get('contact', [ContactFormController::class, 'create'])->name('contact.c
 Route::post('contact', [ContactFormController::class, 'store'])->name('contact.store');
 
 Route::get('/cart', [CartController::class, 'cart']);
+
+Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+
