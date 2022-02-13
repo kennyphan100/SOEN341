@@ -11,9 +11,9 @@
 <div class="container">
   <div class="row 1 row-2-cols-3">
     <div class="col">
-      <a href=""><img src="images/twilight.jpg"></a> <br>
+      <a href="{{ route('products.show', 12) }}"><img src="images/twilight.jpg"></a> <br>
       <div class="product_description">Fantasy / Romance</div>
-      <h2 class="product_name"><a href="">Twilight</a></h2>
+      <h2 class="product_name"><a href="{{ route('products.show', 12) }}">Twilight</a></h2>
       <div class="product_price">$9.99</div> <br><br>
     </div>
 

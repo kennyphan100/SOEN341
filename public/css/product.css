@@ -1,0 +1,38 @@
+.banner_bg_main {
+    margin-bottom: 50px;
+}
+
+.sproduct img {
+    width: 100%;
+    height: 600px;
+}
+
+.sproduct .category {
+    color: lightgray;
+}
+
+.sproduct select {
+    display: block;
+    padding: 5px 10px;
+}
+
+.sproduct input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.sproduct input:focus {
+    outline: none;
+}
+
+.sproduct button:hover {
+    background-color: rgb(255, 153, 0);
+}
+
+#quantity_text, #quantity {
+    display: inline-block;
+    margin-right: 10px;
+}
