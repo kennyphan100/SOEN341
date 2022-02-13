@@ -56,13 +56,13 @@
                        Categories
                      </button>
                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                       <li><a class="dropdown-item" href="{{ route('products.index') }}">Books</a></li>
-                       <li><a class="dropdown-item" href="#">Electronics</a></li>
-                       <li><a class="dropdown-item" href="#">Jewellery & Watches</a></li>
-                       <li><a class="dropdown-item" href="#">Health & Beauty</a></li>
-                       <li><a class="dropdown-item" href="#">Sporting Goods</a></li>
-                       <li><a class="dropdown-item" href="#">Clothing</a></li>
-                       <li><a class="dropdown-item" href="#">Grocery</a></li>
+                       <li><a class="dropdown-item" href="{{ route('categories.show', 'Books') }}">Books</a></li>
+                       <li><a class="dropdown-item" href="{{ route('categories.show', 'Electronics') }}">Electronics</a></li>
+                       <li><a class="dropdown-item" href="{{ route('categories.show', 'Jewellery & Watches') }}">Jewellery & Watches</a></li>
+                       <li><a class="dropdown-item" href="{{ route('categories.show', 'Health & Beauty') }}">Health & Beauty</a></li>
+                       <li><a class="dropdown-item" href="{{ route('categories.show', 'Sporting Goods') }}">Sporting Goods</a></li>
+                       <li><a class="dropdown-item" href="{{ route('categories.show', 'Clothing') }}">Clothing</a></li>
+                       <li><a class="dropdown-item" href="{{ route('categories.show', 'Grocery') }}">Grocery</a></li>
                      </ul>
                   </div>
                   <div class="main">

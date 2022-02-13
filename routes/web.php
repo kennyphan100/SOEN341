@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,7 @@ Route::post('contact', [ContactFormController::class, 'store'])->name('contact.s
 
 Route::get('/cart', [CartController::class, 'cart']);
 
-Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/categories/{id}', [CategoriesController::class, 'show'])->name('categories.show');
+
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 

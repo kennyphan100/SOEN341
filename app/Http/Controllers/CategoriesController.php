@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ProductsController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('products.index');
+        //
     }
 
     /**
@@ -46,7 +46,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        return view('products.show', ['product' => Product::findOrFail($id)]);
+        $products_for_this_category = DB::table('products')->where('category', $id)->get();
+
+        return view('categories.show', ['category' => $id, 'products' => $products_for_this_category]);
     }
 
     /**
