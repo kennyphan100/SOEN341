@@ -31,4 +31,5 @@ Route::post('contact', [ContactFormController::class, 'store'])->name('contact.s
 Route::get('/cart', [CartController::class, 'cart']);
 
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
