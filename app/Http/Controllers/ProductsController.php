@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ProductsController extends Controller
 {
@@ -14,7 +15,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('products.index');
+        $products = Product::all();
+        $cart = Cart::content();
+
+        return view('products.index', ['products' => $products, 'cart' => $cart]);
     }
 
     /**
@@ -46,7 +50,9 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        return view('products.show', ['product' => Product::findOrFail($id)]);
+        $cart = Cart::content();
+
+        return view('products.show', ['product' => Product::findOrFail($id), 'cart' => $cart]); 
     }
 
     /**

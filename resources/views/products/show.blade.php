@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', 'Products - ...')
+@section('title', $product->name)
 
 @section('content')
 
@@ -20,14 +20,23 @@
 
             <h2 class="mt-4 mb-4">${{ $product->price }}</h2>
 
-            <span id="quantity_text">Quantity: </span>
-            <select name="quantity" id="quantity">
-                @for ($i = 1; $i <= 10; $i++)
-                    <option value="{{ $i }}">{{ $i }}</option>
-                @endfor
-            </select>
 
-            <button type="submit" class="btn btn-warning">Add to Cart</button>
+            @if ($cart->where('id', $product->id)->count())
+            <h4 style="color: rgb(255, 153, 0);">In Cart.</h4>
+            @else
+                <form action="{{ route('cart.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <label for="quantity">Quantity: </label>
+                    <select name="quantity" id="quantity">
+                        @for ($i = 1; $i <= 5; $i++)
+                            <option value="{{ $i }}">{{ $i }}</option>
+                        @endfor
+                    </select>
+                    <br> <br>
+                    <button type="submit" class="btn btn-warning">Add to Cart</button>
+                </form>
+            @endif
 
             <h4 class="mt-5 mb-3">Product Details</h4>
             <span>
@@ -35,7 +44,6 @@
             </span>
         </div>
     </div>
-
     
 </section>
 
