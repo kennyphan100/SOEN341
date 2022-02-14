@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,4 @@ Route::get('/categories/{id}', [CategoriesController::class, 'show'])->name('cat
 
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
+Route::get('/checkout', [OrderController::class, 'index'])->name('order.index'); //Checkout index
