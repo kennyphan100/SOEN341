@@ -29,7 +29,10 @@ require __DIR__.'/auth.php';
 Route::get('contact', [ContactFormController::class, 'create'])->name('contact.create');
 Route::post('contact', [ContactFormController::class, 'store'])->name('contact.store');
 
-Route::get('/cart', [CartController::class, 'cart']);
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index'); // Shopping cart view page
+Route::post('/cart', [CartController::class, 'store'])->name('cart.store'); // Add item to shopping cart
+Route::delete('/cart', [CartController::class, 'delete'])->name('cart.delete'); // Delete item from shopping cart
+Route::patch('/cart', [CartController::class, 'update'])->name('cart.update'); // Update quantity from shopping cart
 
 Route::get('/categories/{id}', [CategoriesController::class, 'show'])->name('categories.show');
 

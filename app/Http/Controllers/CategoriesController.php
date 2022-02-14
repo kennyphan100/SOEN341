@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class CategoriesController extends Controller
 {
@@ -46,9 +47,11 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
+        $cart = Cart::content();
+
         $products_for_this_category = DB::table('products')->where('category', $id)->get();
 
-        return view('categories.show', ['category' => $id, 'products' => $products_for_this_category]);
+        return view('categories.show', ['category' => $id, 'products' => $products_for_this_category, 'cart' => $cart]); 
     }
 
     /**
