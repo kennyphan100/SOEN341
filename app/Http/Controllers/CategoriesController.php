@@ -45,11 +45,33 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $sort_type = "none")
     {
         $cart = Cart::content();
 
         $products_for_this_category = DB::table('products')->where('category', $id)->get();
+
+        // TODO FIXME TEST
+        $products_for_this_category_sorted_by_price_asc = DB::table('products')->where('category', $id)->orderBy('price')->get();
+        // $products_for_this_category_sorted_by_price_asc = DB::table('products')->where('category', $id)->orderBy('price',"desc")->get();
+
+
+
+        foreach ($products_for_this_category as $p) {
+            info('Product: ', [$p->name, $p->price]);
+            // info('Product: ', [json_encode($p, JSON_HEX_TAG)] );
+            // info('Product: ', var_dump($p));
+        }
+        foreach ($products_for_this_category_sorted_by_price_asc as $p) {
+            info('Product Sorted by price: ', [$p->name, $p->price]);
+            // info('Product: ', [json_encode($p, JSON_HEX_TAG)] );
+            // info('Product: ', var_dump($p));
+        }
+        // TODO FIXME TEST
+
+        if ($sort_type == "asc") {
+            $products_for_this_category = $products_for_this_category_sorted_by_price_asc;
+        }
 
         return view('categories.show', ['category' => $id, 'products' => $products_for_this_category, 'cart' => $cart]); 
     }
