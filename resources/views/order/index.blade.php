@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Checkout example · Bootstrap</title>
+    <title>Checkout</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/checkout/">
 
@@ -45,7 +45,7 @@
 
 @section('content')
 
-
+    
 
   <body class="bg-light">
     <div class="container">
@@ -53,32 +53,24 @@
   <div class="row">
       <p></p>
     <div class="col-md-4 order-md-2 mb-4">
+      
       <h4 class="d-flex justify-content-between align-items-center mb-3">
         <span class="text-muted">Your cart</span>
         <span class="badge badge-secondary badge-pill">3</span>
       </h4>
       <ul class="list-group mb-3">
+      @foreach($products as $product)
+      
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
-            <h6 class="my-0">Product name</h6>
+            <h6 class="my-0">{{ $product->name }}</h6>
             <small class="text-muted">Brief description</small>
           </div>
-          <span class="text-muted">$12</span>
+          <span class="text-muted">{{ $product->price }}</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$8</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$5</span>
-        </li>
+        
+        @endforeach
+        <!-- IF WE WANT TO ADD PROMO CODES
         <li class="list-group-item d-flex justify-content-between bg-light">
           <div class="text-success">
             <h6 class="my-0">Promo code</h6>
@@ -86,12 +78,25 @@
           </div>
           <span class="text-success">-$5</span>
         </li>
+        -->
+        @php
+                // Calculate subtotal
+                $subtotal = 0;
+                $nb_of_items = 0;
+            
+                foreach($products as $product) {
+                    $subtotal += ($product->price*$product->qty);
+                    $nb_of_items += $product->qty;
+                }
+
+        @endphp
         <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
-          <strong>$20</strong>
+          <span>Subtotal ({{ $nb_of_items }} items):</span>
+          <strong>${{ $subtotal }}</strong>
         </li>
       </ul>
-
+      
+      <!-- IF WE WANT TO ADD PROMO CODE
       <form class="card p-2">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Promo code">
@@ -100,21 +105,23 @@
           </div>
         </div>
       </form>
+     -->
     </div>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Billing address</h4>
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" novalidate action="/orderplaced" method="POST">
+        @csrf
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Last name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="" required>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -123,7 +130,7 @@
 
         <div class="mb-3">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com">
+          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
           </div>
@@ -131,7 +138,7 @@
 
         <div class="mb-3">
           <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+          <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" required>
           <div class="invalid-feedback">
             Please enter your shipping address.
           </div>
@@ -139,17 +146,17 @@
 
         <div class="mb-3">
           <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite">
         </div>
 
         <div class="row">
           <div class="col-md-5 mb-3">
             <label for="country">Country</label>
-            <select class="custom-select d-block w-100" id="country" required>
-              <option value="">Choose...</option>
-              <option>United States</option>
-              <option>Canada</option>
-              <option>Elsewhere</option>
+            <select class="custom-select d-block w-100" id="country" name="country" required>
+              <option value="" name="">Choose...</option>
+              <option value="united_States" name="country">United States</option>
+              <option value="canada" name="country">Canada</option>
+              <option value="somewhere_Else" name="country">Elsewhere</option>
             </select>
             <div class="invalid-feedback">
               Please select a valid country.
@@ -157,14 +164,14 @@
           </div>
           <div class="col-md-4 mb-3">
             <label for="state">State/Province</label>
-            <input type="text" class="form-control" id="province" placeholder="" required>
+            <input type="text" class="form-control" id="province" name="province" placeholder="" required>
             <div class="invalid-feedback">
               Please provide a valid state.
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
+            <input type="text" class="form-control" id="zip" name="zip" placeholder="" required>
             <div class="invalid-feedback">
               Zip code required.
             </div>
@@ -185,22 +192,22 @@
 
         <div class="d-block my-3">
           <div class="custom-control custom-radio">
-            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+            <input id="credit" name="paymentMethod" type="radio" value="credit_card" class="custom-control-input" checked required>
             <label class="custom-control-label" for="credit">Credit card</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <input id="debit" name="paymentMethod" type="radio" value="debit_card" class="custom-control-input" required>
             <label class="custom-control-label" for="debit">Debit card</label>
           </div>
           <div class="custom-control custom-radio">
-            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+            <input id="paypal" name="paymentMethod" type="radio" value="paypal" class="custom-control-input" required>
             <label class="custom-control-label" for="paypal">PayPal</label>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+            <input type="text" class="form-control" id="cc-name" name="cc-name" placeholder="" required>
             <small class="text-muted">Full name as displayed on card</small>
             <div class="invalid-feedback">
               Name on card is required
@@ -208,7 +215,7 @@
           </div>
           <div class="col-md-6 mb-3">
             <label for="cc-number">Credit card number</label>
-            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+            <input type="text" class="form-control" id="cc_number" name="cc_number" nameplaceholder="" required>
             <div class="invalid-feedback">
               Credit card number is required
             </div>

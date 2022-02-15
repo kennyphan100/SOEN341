@@ -96,7 +96,9 @@
             <div class="items-checkout">
                 <div class="items-subtotal">Sub-Total ({{$nb_of_items}} items):</div>
                 <div class="items-total-amount">${{ $subtotal }}</div>
-                <button class="checkout-click">Proceed to Checkout</button>
+                <a href="/checkout">
+                <button class="checkout-click" >Proceed to Checkout</button>
+                </a>
             </div>
 
         @else
