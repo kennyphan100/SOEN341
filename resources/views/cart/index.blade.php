@@ -47,7 +47,7 @@
 
                     <!-- Product Quantity -->
                     <div class="item-quantity">
-                        <form action="{{ route('cart.update', ['id'=>1, 'something'=>6]) }}" method="POST" class="change-quantity" >
+                        <form action="{{ route('cart.update') }}" method="POST" class="change-quantity" >
                             @method('patch')
                             @csrf
                             <input type="hidden" name="row_id" value="{{ $product->rowId }}">
