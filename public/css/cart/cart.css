@@ -125,12 +125,40 @@ button[class*=button] {
     cursor: pointer;
 }
 
-.decrease-button img {
-    margin-bottom: 3px;
+.quantity-display {
+    display: inline-block;
 }
 
-.increase-button img {
-    margin-top: 2px;
+.minus-button {
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 1.8em;
+    padding: 0;
+    margin: 0;
+}
+
+.plus-button {
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 1.8em;
+    padding: 0;
+    margin: 0;
+}
+
+.plus-button:hover {
+    color: green;
+}
+
+.minus-button:hover {
+    color: red;
 }
 
 button:focus,
