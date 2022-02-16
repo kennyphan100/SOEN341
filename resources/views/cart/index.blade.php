@@ -54,11 +54,11 @@
                             <input type="hidden" name="quantity" value="{{ $product->qty + 1 }}">
                             
                             <button class="increase-button" type="submit" name="increaseButton">
-                                <img src="{{ URL::asset('images/plus.svg'); }}" alt="..."/>
+                                <span class="plus-button">&#43;</span>
                             </button>
                         </form>
 
-                        <input type="text" value="{{ $product->qty }}" min=1 name="quantity">
+                        <input class="quantity-display" type="text" value="{{ $product->qty }}" min=1 name="quantity">
 
                         <form action="{{ route('cart.update', ['id'=>1, 'something'=>6]) }}" method="POST" class="change-quantity" >
                             @method('patch')
@@ -67,7 +67,7 @@
                             <input type="hidden" name="quantity" value="{{ $product->qty - 1 }}">
 
                             <button class="decrease-button" type="submit" name="decreaseButton">
-                                <img src="{{ URL::asset('images/minus.svg'); }}" atl="..."/>
+                                <span class="minus-button">&#8722;</span>
                             </button>
                         </form>
 
