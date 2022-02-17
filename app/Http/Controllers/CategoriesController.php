@@ -45,13 +45,23 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $sort_type = "no_sort")
     {
         $cart = Cart::content();
 
-        $products_for_this_category = DB::table('products')->where('category', $id)->get();
+        if ($sort_type == 'asc') {
+            $products_for_this_category_sorted_by_price_asc = DB::table('products')->where('category', $id)->orderBy('price', 'asc')->get();
 
-        return view('categories.show', ['category' => $id, 'products' => $products_for_this_category, 'cart' => $cart]); 
+            $products_for_this_category = $products_for_this_category_sorted_by_price_asc;
+        } elseif ($sort_type == 'desc') {
+            $products_for_this_category_sorted_by_price_desc = DB::table('products')->where('category', $id)->orderBy('price', 'desc')->get();
+
+            $products_for_this_category = $products_for_this_category_sorted_by_price_desc;
+        } else { // no_sort -> No sorting selected
+            $products_for_this_category = DB::table('products')->where('category', $id)->get();
+        }
+
+        return view('categories.show', ['category' => $id, 'products' => $products_for_this_category, 'cart' => $cart]);
     }
 
     /**
