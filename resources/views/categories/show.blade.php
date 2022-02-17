@@ -7,12 +7,14 @@
 <link rel="stylesheet" href="/css/products.css">
 
 <style>
+  /* https://www.w3schools.com/css/css_grid_item.asp */
 
-/* https://www.w3schools.com/css/css_grid_item.asp */
-
-  .container, .container-lg, .container-md, .container-sm {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
     max-width: 95%;
-}
+  }
 
   .grid-container {
     display: grid;
@@ -34,19 +36,17 @@
     grid-row: 1 / 10;
   }
 
-  .s341-filter-items{
+  .s341-filter-items {
     font-size: small;
     text-align: center;
   }
-  
-  .s341-filter-item-header{
+
+  .s341-filter-item-header {
     font-size: large;
     text-align: left;
     -webkit-text-stroke: thin;
     border-bottom-style: inset;
   }
-
-
 </style>
 
 
@@ -67,31 +67,31 @@
       </ul>
     </ul>
   </div>
-<div class="container">
+  <div class="container">
 
-  @if(session('status'))
+    @if(session('status'))
     <div class="alert alert-success">
-        {{ session('status') }}
+      {{ session('status') }}
     </div>
-  @endif
+    @endif
 
-  <div class="row 1 row-2-cols-3">
-    @foreach ($products as $product)
-        <div class="col-4">
-            <a href="{{ route('products.show', $product->id) }}"><img src="{{ asset('images/' . $product->image) }}"></a> <br>
-            {{-- <div class="product_description"></div> --}}
-            <h2 class="product_name"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h2>
+    <div class="row 1 row-2-cols-3">
+      @foreach ($products as $product)
+      <div class="col-4">
+        <a href="{{ route('products.show', $product->id) }}"><img src="{{ asset('images/' . $product->image) }}"></a> <br>
+        {{-- <div class="product_description"></div> --}}
+        <h2 class="product_name"><a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a></h2>
 
-            @if ($cart->where('id', $product->id)->count())
-              <h4 style="color: rgb(255, 153, 0);">In Cart.</h4>
-            @else
-              <div class="product_price">${{ $product->price }}</div> <br><br>
-            @endif
-        </div>
-    @endforeach
+        @if ($cart->where('id', $product->id)->count())
+        <h4 style="color: rgb(255, 153, 0);">In Cart.</h4>
+        @else
+        <div class="product_price">${{ $product->price }}</div> <br><br>
+        @endif
+      </div>
+      @endforeach
+    </div>
+
   </div>
 
-</div>
 
-
-@endsection
+  @endsection
