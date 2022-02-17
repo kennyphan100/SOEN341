@@ -36,11 +36,14 @@
 
   .s341-filter-items{
     font-size: small;
+    text-align: center;
   }
   
   .s341-filter-item-header{
     font-size: large;
-    
+    text-align: left;
+    -webkit-text-stroke: thin;
+    border-bottom-style: inset;
   }
 
 
