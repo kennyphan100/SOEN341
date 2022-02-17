@@ -39,4 +39,5 @@ Route::get('/categories/{id}', [CategoriesController::class, 'show'])->name('cat
 
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
-Route::get('/checkout', [OrderController::class, 'index'])->name('order.index'); //Checkout index
+Route::get('/checkout', [OrderController::class, 'index'])->middleware(['auth'])->name('order.index'); //Checkout index
+Route::post('/orderplaced', [OrderController::class, 'orderPlaced'])->name('order.orderPlaced'); //success on the order

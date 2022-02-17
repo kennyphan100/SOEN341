@@ -47,18 +47,18 @@
 
                     <!-- Product Quantity -->
                     <div class="item-quantity">
-                        <form action="{{ route('cart.update', ['id'=>1, 'something'=>6]) }}" method="POST" class="change-quantity" >
+                        <form action="{{ route('cart.update') }}" method="POST" class="change-quantity" >
                             @method('patch')
                             @csrf
                             <input type="hidden" name="row_id" value="{{ $product->rowId }}">
                             <input type="hidden" name="quantity" value="{{ $product->qty + 1 }}">
                             
                             <button class="increase-button" type="submit" name="increaseButton">
-                                <img src="{{ URL::asset('images/plus.svg'); }}" alt="..."/>
+                                <span class="plus-button">&#43;</span>
                             </button>
                         </form>
 
-                        <input type="text" value="{{ $product->qty }}" min=1 name="quantity">
+                        <input class="quantity-display" type="text" value="{{ $product->qty }}" min=1 name="quantity">
 
                         <form action="{{ route('cart.update', ['id'=>1, 'something'=>6]) }}" method="POST" class="change-quantity" >
                             @method('patch')
@@ -67,7 +67,7 @@
                             <input type="hidden" name="quantity" value="{{ $product->qty - 1 }}">
 
                             <button class="decrease-button" type="submit" name="decreaseButton">
-                                <img src="{{ URL::asset('images/minus.svg'); }}" atl="..."/>
+                                <span class="minus-button">&#8722;</span>
                             </button>
                         </form>
 
@@ -96,7 +96,9 @@
             <div class="items-checkout">
                 <div class="items-subtotal">Sub-Total ({{$nb_of_items}} items):</div>
                 <div class="items-total-amount">${{ $subtotal }}</div>
-                <button class="checkout-click">Proceed to Checkout</button>
+                <a href="/checkout">
+                <button class="checkout-click" >Proceed to Checkout</button>
+                </a>
             </div>
 
         @else

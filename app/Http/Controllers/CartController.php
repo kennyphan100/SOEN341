@@ -37,7 +37,14 @@ class CartController extends Controller
 
     public function delete(Request $request)
     {
-        Cart::remove($request->input('row_id'));
+
+        $id = $request->input('row_id');
+
+        $cart = Cart::content()->where('rowId', $id);
+
+        if($cart->isNotEmpty()){
+            Cart::remove($id);
+        }
 
         $request->session()->flash('status', 'The item was removed from your cart!');
         
@@ -52,7 +59,13 @@ class CartController extends Controller
             $request->session()->flash('status', 'Max item quantity reached!');
 
         } else {
-            Cart::update($request->input('row_id'), $quantity);
+
+            $cart = Cart::content()->where('rowId', $request->input('row_id'));
+
+            if($cart->isNotEmpty()){
+                Cart::update($request->input('row_id'), $quantity);
+            }
+
             $request->session()->flash('status', 'The item quantity was updated!');
 
         }
