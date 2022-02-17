@@ -6,57 +6,6 @@
 
 <link rel="stylesheet" href="/css/products.css">
 
-<style>
-  /* https://www.w3schools.com/css/css_grid_item.asp */
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm {
-    max-width: 95%;
-  }
-
-  .grid-container {
-    display: grid;
-    grid-template-columns: 15% auto;
-    /* grid-template-columns: auto auto; */
-    /* gap: 0.5px; */
-    background-color: #ffffff;
-    padding: 0px;
-  }
-
-  .grid-container>div {
-    background-color: rgba(255, 255, 255, 1);
-    text-align: center;
-    padding: 5px 0;
-    font-size: 30px;
-  }
-
-  .s341-filter-option-sidebar {
-    grid-row: 1 / 10;
-  }
-
-  .s341-filter-items {
-    font-size: small;
-    text-align: center;
-  }
-
-  .s341-filter-item-header {
-    font-size: large;
-    text-align: left;
-    -webkit-text-stroke: thin;
-  }
-
-  .list-group {
-    border-right: inset;
-  }
-
-  .btn.btn-link:disabled {
-    color: black;
-  }
-</style>
-
-
 <h1 class="title">{{ $category }}</h1><br>
 
 <div class="grid-container">
@@ -99,6 +48,6 @@
     </div>
 
   </div>
-
+</div>
 
   @endsection
