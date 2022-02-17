@@ -45,7 +45,7 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id, $sort_type = "none")
+    public function show($id, $sort_type = "no_sort")
     {
         $cart = Cart::content();
 

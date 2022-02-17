@@ -37,6 +37,9 @@ Route::patch('/cart', [CartController::class, 'update'])->name('cart.update'); /
 
 Route::get('/categories/{id}', [CategoriesController::class, 'show'])->name('categories.show');
 
+Route::get('/categories/{id}/{sort_type}', [CategoriesController::class, 'show'])->name('categories.show_ascending');
+
+
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
 Route::get('/checkout', [OrderController::class, 'index'])->middleware(['auth'])->name('order.index'); //Checkout index
