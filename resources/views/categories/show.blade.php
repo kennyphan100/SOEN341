@@ -40,6 +40,7 @@
   
   .s341-filter-item-header{
     font-size: large;
+    
   }
 
 
@@ -51,12 +52,12 @@
 <div class="grid-container">
   <div class="list-group" class="s341-filter-option-sidebar">
     <ul>
-      <li class="s341-filter-item-header">Price Filters</li>
+      <li class="s341-filter-item-header"><button type="button" class="btn btn-link disabled">Price Filters</button></li>
       <ul>
         <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'asc']) }}"><button type="button" class="btn btn-link">Price Low-High</button></a></li>
         <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'desc']) }}"><button type="button" class="btn btn-link">Price High-Low</button></a></li>
       </ul>
-      <li class="s341-filter-item-header">Rating Filters</li>
+      <li class="s341-filter-item-header"><button type="button" class="btn btn-link disabled">Rating Filters</button></li>
       <ul>
         <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'asc']) }}"><button type="button" class="btn btn-link">Rating Low-High</button></a></li>
         <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'desc']) }}"><button type="button" class="btn btn-link">Rating High-Low</button></a></li>
