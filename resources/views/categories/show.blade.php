@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="/css/products.css">
 
 
-<a href="{{ route('categories.show_ascending', ['Books', 'asc']) }}"><button type="button" class="btn btn-primary">Sort Asc</button></a>
+<a href="{{ route('categories.show_sort_by_price', ['Books', 'asc']) }}"><button type="button" class="btn btn-primary">Sort Asc</button></a>
+
+<a href="{{ route('categories.show_sort_by_price', ['Books', 'desc']) }}"><button type="button" class="btn btn-primary">Sort Desc</button></a>
 
 
 <h1 class="title">{{ $category }}</h1><br>

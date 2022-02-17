@@ -52,28 +52,29 @@ class CategoriesController extends Controller
         $products_for_this_category = DB::table('products')->where('category', $id)->get();
 
         // TODO FIXME TEST
-        $products_for_this_category_sorted_by_price_asc = DB::table('products')->where('category', $id)->orderBy('price')->get();
-        // $products_for_this_category_sorted_by_price_asc = DB::table('products')->where('category', $id)->orderBy('price',"desc")->get();
+        $products_for_this_category_sorted_by_price_asc = DB::table('products')->where('category', $id)->orderBy('price', 'asc')->get();
 
+        $products_for_this_category_sorted_by_price_desc = DB::table('products')->where('category', $id)->orderBy('price', 'desc')->get();
 
-
-        foreach ($products_for_this_category as $p) {
-            info('Product: ', [$p->name, $p->price]);
-            // info('Product: ', [json_encode($p, JSON_HEX_TAG)] );
-            // info('Product: ', var_dump($p));
-        }
-        foreach ($products_for_this_category_sorted_by_price_asc as $p) {
-            info('Product Sorted by price: ', [$p->name, $p->price]);
-            // info('Product: ', [json_encode($p, JSON_HEX_TAG)] );
-            // info('Product: ', var_dump($p));
-        }
+        // foreach ($products_for_this_category as $p) {
+        //     info('Product: ', [$p->name, $p->price]);
+        //     // info('Product: ', [json_encode($p, JSON_HEX_TAG)] );
+        //     // info('Product: ', var_dump($p));
+        // }
+        // foreach ($products_for_this_category_sorted_by_price_asc as $p) {
+        //     info('Product Sorted by price: ', [$p->name, $p->price]);
+        //     // info('Product: ', [json_encode($p, JSON_HEX_TAG)] );
+        //     // info('Product: ', var_dump($p));
+        // }
         // TODO FIXME TEST
 
-        if ($sort_type == "asc") {
+        if ($sort_type == 'asc') {
             $products_for_this_category = $products_for_this_category_sorted_by_price_asc;
+        } elseif ($sort_type == 'desc') {
+            $products_for_this_category = $products_for_this_category_sorted_by_price_desc;
         }
 
-        return view('categories.show', ['category' => $id, 'products' => $products_for_this_category, 'cart' => $cart]); 
+        return view('categories.show', ['category' => $id, 'products' => $products_for_this_category, 'cart' => $cart]);
     }
 
     /**
