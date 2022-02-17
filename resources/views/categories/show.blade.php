@@ -6,14 +6,63 @@
 
 <link rel="stylesheet" href="/css/products.css">
 
+<style>
 
-<a href="{{ route('categories.show_sort_by_price', [$category, 'asc']) }}"><button type="button" class="btn btn-primary">Sort Asc</button></a>
+/* https://www.w3schools.com/css/css_grid_item.asp */
 
-<a href="{{ route('categories.show_sort_by_price', [$category, 'desc']) }}"><button type="button" class="btn btn-primary">Sort Desc</button></a>
+  .container, .container-lg, .container-md, .container-sm {
+    max-width: 95%;
+}
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 15% auto;
+    /* grid-template-columns: auto auto; */
+    /* gap: 0.5px; */
+    background-color: #ffffff;
+    padding: 0px;
+  }
+
+  .grid-container>div {
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+    padding: 5px 0;
+    font-size: 30px;
+  }
+
+  .s341-filter-option-sidebar {
+    grid-row: 1 / 10;
+  }
+
+  .s341-filter-items{
+    font-size: small;
+  }
+  
+  .s341-filter-item-header{
+    font-size: large;
+  }
+
+
+</style>
 
 
 <h1 class="title">{{ $category }}</h1><br>
 
+<div class="grid-container">
+  <div class="list-group" class="s341-filter-option-sidebar">
+    <ul>
+      <li class="s341-filter-item-header">Price Filters</li>
+      <ul>
+        <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'asc']) }}"><button type="button" class="btn btn-link">Price Low-High</button></a></li>
+        <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'desc']) }}"><button type="button" class="btn btn-link">Price High-Low</button></a></li>
+      </ul>
+      <li class="s341-filter-item-header">Rating Filters</li>
+      <ul>
+        <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'asc']) }}"><button type="button" class="btn btn-link">Rating Low-High</button></a></li>
+        <li class="s341-filter-items"><a href="{{ route('categories.show_sort_by_price', [$category, 'desc']) }}"><button type="button" class="btn btn-link">Rating High-Low</button></a></li>
+      </ul>
+    </ul>
+  </div>
 <div class="container">
 
   @if(session('status'))
