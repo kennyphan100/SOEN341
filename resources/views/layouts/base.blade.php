@@ -85,7 +85,8 @@
                               </a>
                            </li>
                            <li>
-                              <a href=""><a href="{{ url('/dashboard') }}" class="text">{{ Auth::user()->name ?? "" }}</a></a>
+                              <!-- <a href=""><a href="{{ url('/dashboard') }}" class="text">{{ Auth::user()->name ?? "" }}</a></a> -->
+                              <a href=""><a href="{{ route('categories.show', 'Health & Beauty') }}" class="text">{{ Auth::user()->name ?? "" }}</a></a>
                            </li>
                            <li>
                               <span class="" style="margin: 0px">
