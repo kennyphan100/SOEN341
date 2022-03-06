@@ -8,7 +8,7 @@
 
 <h1 class="title">{{ $user->name }}</h1><br>
 
-<div class="grid-container">
+<div class="grid-container-outer">
 
     @include('userProfile.userProfileSidebar')
 

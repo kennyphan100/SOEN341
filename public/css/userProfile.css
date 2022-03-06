@@ -7,13 +7,28 @@
 
 
 
-.grid-container {
+.grid-container-outer {
     display: grid;
     grid-template-columns: 15% auto;
     /* grid-template-columns: auto auto; */
     /* gap: 0.5px; */
     background-color: #ffffff;
     padding: 0px;
+  }
+
+  .grid-container-inner {
+    display: grid;
+    grid-template-columns: 33% 20% 20% auto;
+    /* grid-template-columns: auto auto; */
+    /* gap: 0.5px; */
+    background-color: #ffffff;
+    padding: 0px;
+
+    font-size: small;
+  }
+
+  .order_section_2{
+    /* font-size: small; */
   }
   
   /* .grid-container>div {
@@ -50,7 +65,7 @@
     padding-bottom: 20px;
     border-bottom: inset;
   }
-  
+
   .order_form{
     padding-bottom: 20px;
     border-bottom: inset;
