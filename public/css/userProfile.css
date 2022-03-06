@@ -45,3 +45,8 @@
   .btn.btn-link:disabled {
     color: black;
   }
+
+  .payment_form{
+    padding-bottom: 20px;
+    border-bottom: inset;
+  }

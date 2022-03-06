@@ -39,7 +39,7 @@ class UserProfileController extends Controller
         
         $user_payments = DB::table('test_payments')->where('user_id', $user->id)->get();
 
-        // $debug_user_payments = $user_payments;
+        $debug_user_payments = $user_payments;
         $debug_user_payments = null;
 
         return view('userProfile.payments', ['debug_user_payments' => $debug_user_payments, 'user' => $user, 'user_payments' => $user_payments]);
