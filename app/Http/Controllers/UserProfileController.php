@@ -18,22 +18,30 @@ class UserProfileController extends Controller
      */
     public function show_info()
     {
-        $user = Auth::user();
+        $user_info = Auth::user();
+        // $user_info = DB::table('users')->where('id', $user->id);
 
-        return view('userProfile.info', ['user_name' => $user->name]);
+        return view('userProfile.info', ['user_info' => $user_info]);
     }
 
     public function show_orders()
     {
         $user = Auth::user();
 
-        return view('userProfile.orders', ['user_name' => $user->name]);
+        $user_orders = DB::table('orders')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+
+        return view('userProfile.orders', ['user_orders' => $user_orders]);
     }
 
     public function show_payments()
     {
         $user = Auth::user();
+        
+        $user_payments = DB::table('test_payments')->where('user_id', $user->id)->get();
 
-        return view('userProfile.payments', ['user_name' => $user->name]);
+        // $debug_user_payments = $user_payments;
+        $debug_user_payments = null;
+
+        return view('userProfile.payments', ['debug_user_payments' => $debug_user_payments, 'user' => $user]);
     }
 }
