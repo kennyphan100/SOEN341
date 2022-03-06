@@ -18,10 +18,10 @@ class UserProfileController extends Controller
      */
     public function show_info()
     {
-        $user_info = Auth::user();
+        $user = Auth::user();
         // $user_info = DB::table('users')->where('id', $user->id);
 
-        return view('userProfile.info', ['user_info' => $user_info]);
+        return view('userProfile.info', ['user' => $user]);
     }
 
     public function show_orders()
@@ -51,5 +51,17 @@ class UserProfileController extends Controller
         $debug_user_payments = null;
 
         return view('userProfile.payments', ['debug_user_payments' => $debug_user_payments, 'user' => $user, 'user_payments' => $user_payments]);
+    }
+
+    public function show_admin()
+    {
+        $user = Auth::user();
+
+        // $user_payments = DB::table('test_payments')->where('user_id', $user->id)->get();
+
+        // $debug_user_payments = $user_payments;
+        // $debug_user_payments = null;
+
+        return view('userProfile.admin', ['user' => $user]);
     }
 }

@@ -6,14 +6,14 @@
 
 <link rel="stylesheet" href="/css/userProfile.css">
 
-<h1 class="title">{{ $user->name }}'s Profile</h1><br>
+<h1 class="title">{{ $user->name }}'s Admin Page</h1><br>
 
 <div class="grid-container-outer">
 
     @include('userProfile.userProfileSidebar')
 
-    <div class="container">
-        <div class="form-group row">
+     <div class="container">
+    <!--    <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Full Name</label>
             <div class="col-sm-10">
                 <label id="name" class="col-sm-2 col-form-label">{{$user->name}}</label>
@@ -56,7 +56,8 @@
                 <label id="zipcode" class="col-sm-2 col-form-label">WIP FIX NEEDED IN DB FOR Zipcode</label>
             </div>
         </div>
-    </div>
+     -->
+     </div>
 </div>
 
 @endsection

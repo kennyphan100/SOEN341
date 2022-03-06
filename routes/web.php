@@ -48,6 +48,8 @@ Route::get('/userProfile_order',[UserProfileController::class, 'show_orders'])->
 
 Route::get('/userProfile_payment',[UserProfileController::class, 'show_payments'])->name('userProfile.show_user_payments');
 
+Route::get('/userProfile_admin',[UserProfileController::class, 'show_admin'])->name('userProfile.show_user_admin');
+
 
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
