@@ -42,7 +42,7 @@ Route::get('/categories/{id}', [CategoriesController::class, 'show'])->name('cat
 Route::get('/categories/{id}/{sort_type}', [CategoriesController::class, 'show'])->name('categories.show_sort_by_price');
 
 // User details routes
-Route::get('/userProfile/{userId}',[UserProfileController::class, 'show'])->name('userProfile.show_user_information');
+Route::get('/userProfile',[UserProfileController::class, 'show'])->name('userProfile.show_user_information');
 
 
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');

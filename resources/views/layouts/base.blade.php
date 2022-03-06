@@ -85,7 +85,7 @@
                               </a>
                            </li>
                            <li>
-                              <a href=""><a href="{{ route('userProfile.show_user_information', 'Health & Beauty') }}" class="text">{{ Auth::user()->name ?? "" }}</a></a>
+                              <a href=""><a href="{{ route('userProfile.show_user_information') }}" class="text">{{ Auth::user()->name ?? "" }}</a></a>
                            </li>
                            <li>
                               <span class="" style="margin: 0px">
