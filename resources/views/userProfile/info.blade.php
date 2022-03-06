@@ -35,25 +35,25 @@
         <div class="form-group row">
             <label for="address" class="col-sm-2 col-form-label">Address</label>
             <div class="col-sm-10">
-                <label id="Address" class="col-sm-2 col-form-label">WIP FIX Address</label>
+                <label id="Address" class="col-sm-2 col-form-label">WIP FIX NEEDED IN DB FOR Address</label>
             </div>
         </div>
         <div class="form-group row">
             <label for="state" class="col-sm-2 col-form-label">State / Province</label>
             <div class="col-sm-10">
-                <label id="state" class="col-sm-2 col-form-label">WIP FIX State</label>
+                <label id="state" class="col-sm-2 col-form-label">WIP FIX NEEDED IN DB FOR State</label>
             </div>
         </div>
         <div class="form-group row">
             <label for="country" class="col-sm-2 col-form-label">Country</label>
             <div class="col-sm-10">
-                <label id="country" class="col-sm-2 col-form-label">WIP FIX Country</label>
+                <label id="country" class="col-sm-2 col-form-label">WIP FIX NEEDED IN DB FOR Country</label>
             </div>
         </div>
         <div class="form-group row">
             <label for="zipcode" class="col-sm-2 col-form-label">Zipcode</label>
             <div class="col-sm-10">
-                <label id="zipcode" class="col-sm-2 col-form-label">WIP FIX Zipcode</label>
+                <label id="zipcode" class="col-sm-2 col-form-label">WIP FIX NEEDED IN DB FOR Zipcode</label>
             </div>
         </div>
     </div>
