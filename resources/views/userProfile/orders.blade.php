@@ -1,14 +1,15 @@
 @extends('layouts.base')
 
-<!-- @section('title', $user) -->
+@section('title', $user)
 
 @section('content')
 
-<link rel="stylesheet" href="/css/userProfile.css">
+<link rel="stylesheet" href="/css/userProfile_order.css">
 
 <!-- <h1 class="debug_value">{{ $product_info ?? "" }}</h1><br> -->
 
 <h1 class="title">{{ $user->name }}'s Profile</h1><br>
+<!-- <h1 class="title">{{ $user->name }}'s Profile</h1><br> -->
 
 <div class="grid-container-outer">
 
