@@ -16,12 +16,10 @@ class UserProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show_info()
     {
         $user = Auth::user();
-        // $user_name = Auth::user()->name;
 
-        return view('userProfile.show', ['user_name' => $user->name]);
-        // return view('userProfile.show', ['user_name' => $user]);
+        return view('userProfile.info', ['user_name' => $user->name]);
     }
 }
