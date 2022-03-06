@@ -42,6 +42,6 @@ class UserProfileController extends Controller
         // $debug_user_payments = $user_payments;
         $debug_user_payments = null;
 
-        return view('userProfile.payments', ['debug_user_payments' => $debug_user_payments, 'user' => $user]);
+        return view('userProfile.payments', ['debug_user_payments' => $debug_user_payments, 'user' => $user, 'user_payments' => $user_payments]);
     }
 }
