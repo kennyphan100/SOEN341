@@ -20,19 +20,19 @@
                 <div class="form-group row">
                     <label for="name_on_card" class="col-sm-2 col-form-label">Name on Card</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="name_on_card" value={{$payment->name_on_card}}>
+                        <label id="name_on_card" class="col-sm-2 col-form-label">{{$payment->name_on_card}}</label>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="credit_card" class="col-sm-2 col-form-label">Credit Card</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="credit_card" value={{$payment->credit_card_number}}>
+                        <label id="credit_card" class="col-sm-2 col-form-label">{{$payment->credit_card_number}}</label>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="credit_card_expiry" class="col-sm-2 col-form-label">Expiration</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="credit_card_expiry" value= {{ $payment->credit_card_expiration}}>
+                        <label id="credit_card_expiry" class="col-sm-2 col-form-label">{{$payment->credit_card_expiration}}</label>
                     </div>
                 </div>
             </form>
