@@ -22,4 +22,18 @@ class UserProfileController extends Controller
 
         return view('userProfile.info', ['user_name' => $user->name]);
     }
+
+    public function show_orders()
+    {
+        $user = Auth::user();
+
+        return view('userProfile.orders', ['user_name' => $user->name]);
+    }
+
+    public function show_payments()
+    {
+        $user = Auth::user();
+
+        return view('userProfile.payments', ['user_name' => $user->name]);
+    }
 }
