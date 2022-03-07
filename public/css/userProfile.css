@@ -16,16 +16,15 @@
     padding: 0px;
   }
 
-  /* .grid-container-inner {
+   .grid-container-inner {
     display: grid;
     grid-template-columns: 33% 20% 20% auto;
     /* grid-template-columns: auto auto; */
     /* gap: 0.5px; */
     background-color: #ffffff;
     padding: 0px;
-
     font-size: small;
-  } */
+  } 
 
   .order_section_2{
     /* font-size: small; */
@@ -38,16 +37,16 @@
     font-size: 30px;
   } */
   
-  .s341-filter-option-sidebar {
+  .s341-user-profile-option-sidebar {
     grid-row: 1 / 10;
   }
   
-  .s341-filter-items {
+  .s341-user-profile-items {
     font-size: small;
     text-align: center;
   }
   
-  .s341-filter-item-header {
+  .s341-user-profile-header {
     font-size: large;
     text-align: left;
     -webkit-text-stroke: thin;

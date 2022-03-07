@@ -5,6 +5,8 @@
     letter-spacing: 2px;
 }
 
+
+
 .grid-container-outer {
     display: grid;
     grid-template-columns: 15% auto;
@@ -14,30 +16,18 @@
     padding: 0px;
   }
 
-  .grid-container-inner {
+   .grid-container-inner {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 33% 20% 20% auto;
     /* grid-template-columns: auto auto; */
     /* gap: 0.5px; */
     background-color: #ffffff;
     padding: 0px;
+    font-size: small;
+  } 
 
+  .order_section_2{
     /* font-size: small; */
-  }
-
-  .order_section_1{
-    font-size: 10px;
-  }
-  .order_section_2_1{
-    font-size: 10px;
-  }
-  
-  .order_section_2_2{
-    font-size: 10px;
-  }
-  
-  .order_section_3{
-    font-size: 10px;
   }
   
   /* .grid-container>div {
@@ -70,9 +60,22 @@
     color: black;
   }
 
-
-
-  .order_form{
-    /* padding-bottom: 2px; */
+  .payment_form{
+    padding-bottom: 20px;
     border-bottom: inset;
   }
+
+  .order_form{
+    padding-bottom: 20px;
+    border-bottom: inset;
+  }
+
+  .col-4.product-row {
+    padding-bottom: 10px;
+}
+
+.product_price {
+  text-decoration: underline;
+  padding-bottom: 2px;
+  color: rgb(255, 153, 0);
+}
