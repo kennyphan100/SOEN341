@@ -34,8 +34,8 @@ class AdminController extends Controller
     public function show_all_categories()
     {
         $user = Auth::user();
-        $all_products = DB::table('products')->get();
+        $all_categories = DB::table('categories')->get();
 
-        return view('userProfile.admin_category_manage', ['user' => $user, 'products' => $all_products]);
+        return view('userProfile.admin_category_manage', ['user' => $user, 'categories' => $all_categories]);
     }
 }
