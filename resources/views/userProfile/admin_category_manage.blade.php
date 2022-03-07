@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="/css/adminProductsManagement.css">
 <link rel="stylesheet" href="/css/products.css">
 
-<h1 class="title">{{ $user->name }}'s Admin Page</h1><br>
+<h1 class="title">Manage Category</h1><br>
 
 
 <div class="grid-container-outer">

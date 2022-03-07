@@ -79,3 +79,15 @@
   padding-bottom: 2px;
   color: rgb(255, 153, 0);
 }
+
+.product_add_form {
+  display: inline-block;
+}
+
+img#__lpform_productName_icon {
+  visibility: hidden;
+}
+
+img#__lpform_exampleInputPassword1_icon {
+  visibility: hidden;
+}
