@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
@@ -45,6 +46,10 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             // 'account_type' => $request->account_type // This code is causing the PHPUnit check to fail because of cache problems
         ]);
+
+        if ($request->account_type == "admin") {
+            DB::table('users')->where('email', $request->email)->update(['account_type' => 'admin']);
+        }
 
         event(new Registered($user));
 
