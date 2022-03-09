@@ -37,7 +37,6 @@ Route::patch('/cart', [CartController::class, 'update'])->name('cart.update'); /
 
 // Category routes
 Route::get('/categories/{id}', [CategoriesController::class, 'show'])->name('categories.show');
-
 Route::get('/categories/{id}/{sort_type}', [CategoriesController::class, 'show'])->name('categories.show_sort_by_price');
 
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
