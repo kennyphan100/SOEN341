@@ -1,12 +1,12 @@
 @extends('layouts.base')
 
+@section('title', "Payments")
+
 @section('content')
 
 <link rel="stylesheet" href="/css/userProfile.css">
 
-<h1 class="debug_value">{{ $debug_user_payments ?? "" }}</h1><br>
-
-<h1 class="title">{{ $user->name }}' Profile</h1><br>
+<h1 class="title">Your Payments</h1><br>
 
 <div class="grid-container-outer">
 
@@ -14,7 +14,9 @@
 
     <div class="container">
 
-        @foreach ($user_payments as $payment)
+        You don't have any payment methods saved.
+
+        {{-- @foreach ($user_payments as $payment)
         <div class="payment_form">
             <form>
                 <div class="form-group row">
@@ -37,7 +39,7 @@
                 </div>
             </form>
         </div>
-        @endforeach
+        @endforeach --}}
     </div>
 </div>
 

@@ -1,12 +1,12 @@
 @extends('layouts.base')
 
-@section('title', $user)
+@section('title', "Profile")
 
 @section('content')
 
 <link rel="stylesheet" href="/css/userProfile.css">
 
-<h1 class="title">{{ $user->name }}'s Profile</h1><br>
+<h1 class="title">Your Profile</h1><br>
 
 <div class="grid-container-outer">
 

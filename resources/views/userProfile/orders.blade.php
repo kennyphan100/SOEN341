@@ -1,12 +1,12 @@
 @extends('layouts.base')
 
-@section('title', $user)
+@section('title', "Orders")
 
 @section('content')
 
 <link rel="stylesheet" href="/css/userProfile_order.css">
 
-<h1 class="title">{{ $user->name }}'s Profile</h1><br>
+<h1 class="title">Your Orders</h1><br>
 
 <div class="grid-container-outer">
 
@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        @foreach ($user_orders as $order)
+        {{-- @foreach ($user_orders as $order)
 
         <div class="order_form">
             <form>
@@ -96,7 +96,7 @@
                 </div>
             </form>
         </div>
-        @endforeach
+        @endforeach --}}
     </div>
 </div>
 
