@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
 use Illuminate\Support\Facades\Auth;
 
 class UserProfileController extends Controller
@@ -28,17 +26,17 @@ class UserProfileController extends Controller
     {
         $user = Auth::user();
 
-        $user_orders = DB::table('orders')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        // $user_orders = DB::table('orders')->where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
 
-        $product_info = null;
-        $product_info = DB::table('products')->where('id', $user_orders[0]->product_id)->get();
+        // $product_info = null;
+        // $product_info = DB::table('products')->where('id', $user_orders[0]->product_id)->get();
 
-        $debug_user_orders = null;
-        $debug_user_orders = $user_orders;
+        // $debug_user_orders = null;
+        // $debug_user_orders = $user_orders;
 
-        // return view('userProfile.orders', ['user_info'=> $user]);
+        return view('userProfile.orders', ['user'=> $user]);
 
-        return view('userProfile.orders', ['debug_user_orders' => $debug_user_orders, 'user' => $user, 'user_orders' => $user_orders, 'product_info' => $product_info]);
+        // return view('userProfile.orders', ['debug_user_orders' => $debug_user_orders, 'user' => $user, 'user_orders' => $user_orders, 'product_info' => $product_info]);
     }
 
     public function show_payments()

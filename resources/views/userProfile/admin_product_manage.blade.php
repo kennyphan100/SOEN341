@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-@section('title', $user)
+@section('title', "Manage Product")
 
 @section('content')
 
