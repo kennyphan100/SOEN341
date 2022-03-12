@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -163,10 +164,10 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="state">State/Province</label>
-            <input type="text" class="form-control" id="province" name="province" placeholder="" required>
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" name="city" placeholder="" required>
             <div class="invalid-feedback">
-              Please provide a valid state.
+              Please provide a valid city.
             </div>
           </div>
           <div class="col-md-3 mb-3">
@@ -207,7 +208,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="cc-name">Name on card</label>
-            <input type="text" class="form-control" id="cc-name" name="cc-name" placeholder="" required>
+            <input type="text" class="form-control" id="cc_name" name="cc_name" placeholder="" required>
             <small class="text-muted">Full name as displayed on card</small>
             <div class="invalid-feedback">
               Name on card is required
@@ -231,7 +232,7 @@
           </div>
           <div class="col-md-3 mb-3">
             <label for="cc-cvv">CVV</label>
-            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+            <input type="text" class="form-control" id="cc_cvv" name="cc_cvv"placeholder="" required>
             <div class="invalid-feedback">
               Security code required
             </div>
