@@ -219,7 +219,7 @@ $user = Auth::user();
           </div>
           <div class="col-md-6 mb-3">
             <label for="cc-number">Credit card number</label>
-            <input type="text" class="form-control" id="cc_number" name="cc_number" nameplaceholder="" required>
+            <input type="text" class="form-control" id="cc_number" name="cc_number" nameplaceholder="" maxlength = "19" required>
             <div class="invalid-feedback">
               Credit card number is required
             </div>
@@ -228,14 +228,15 @@ $user = Auth::user();
         <div class="row">
           <div class="col-md-3 mb-3">
             <label for="cc-expiration">Expiration</label>
-            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+            <input type="text" class="form-control" id="cc-expiration" placeholder="" maxlength = "5"
+            onkeyup="this.value=this.value.replace(/^(\d\d)(\d)$/g,'$1/$2').replace(/^(\d\d\/\d\d)(\d+)$/g,'$1/$2').replace(/[^\d\/]/g,'')" required>
             <div class="invalid-feedback">
               Expiration date required
             </div>
           </div>
           <div class="col-md-3 mb-3">
             <label for="cc-cvv">CVV</label>
-            <input type="text" class="form-control" id="cc_cvv" name="cc_cvv"placeholder="" required>
+            <input type="text" class="form-control" id="cc_cvv" name="cc_cvv"placeholder="" maxlength = "3" required>
             <div class="invalid-feedback">
               Security code required
             </div>
