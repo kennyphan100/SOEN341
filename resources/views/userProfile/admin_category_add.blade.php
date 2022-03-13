@@ -19,7 +19,7 @@
             <form>
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <input type="text" class="form-control" id="category">
+                    <input type="text" class="form-control" id="category" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

@@ -22,7 +22,9 @@ class AdminController extends Controller
     {
         $user = Auth::user();
 
-        return view('userProfile.admin_product_add', ['user' => $user]);
+        $categories = DB::table('categories')->get();
+
+        return view('userProfile.admin_product_add', ['user' => $user, 'categories' => $categories]);
     }
     public function show_add_category()
     {
