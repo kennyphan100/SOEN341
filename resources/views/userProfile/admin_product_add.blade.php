@@ -19,26 +19,30 @@
             <form>
                 <div class="form-group">
                     <label for="productName">Product Name</label>
-                    <input type="text" class="form-control" id="productName">
+                    <input type="text" class="form-control" id="productName" required>
                 </div>
                 <div class="form-group">
                     <label for="description">Description </label>
-                    <input type="text" class="form-control" id="description">
+                    <textarea name="description" id="description" cols="50" rows="5" class="form-control" id="description" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="category">Category </label>
-                    <input type="text" class="form-control" id="category">
+                    <label for="category">Category </label> <br>
+                    <select name="category" id="category">
+                        @foreach ($categories as $category)
+                            <option class="form-control" value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="price">Price </label>
-                    <input type="text" class="form-control" id="price">
+                    <input type="number" class="form-control" id="price" placeholder="99.99" required>
                 </div>
                 <div class="form-group">
-                    <label for="Image">Image </label>
-                    <input type="text" class="form-control" id="Image" placeholder="airpods.jpg">
+                    <label for="image">Image </label>
+                    <input type="text" class="form-control" id="image" placeholder="airpods.jpg" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-bottom: 50px;">Submit</button>
             </form>
         </div>
     </div>
