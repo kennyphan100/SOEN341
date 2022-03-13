@@ -1,4 +1,7 @@
-
+<?php
+use Illuminate\Support\Facades\Auth;
+$user = Auth::user();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -115,7 +118,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="" required>
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
@@ -131,7 +134,7 @@
 
         <div class="mb-3">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="{{$user->email}}" required>
           <div class="invalid-feedback">
             Valid email is required.
           </div>
