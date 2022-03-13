@@ -59,6 +59,8 @@ Route::get('/userProfile_admin_add_category', [AdminController::class, 'show_add
 
 Route::get('/userProfile_admin_add_product', [AdminController::class, 'show_add_product'])->name('userProfile.show_user_admin_add_product');
 
+Route::post('/userProfile_admin_add_product', [AdminController::class, 'add_product'])->name('userProfile.add_product');
+
 
 
 Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
