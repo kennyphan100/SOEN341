@@ -13,6 +13,7 @@
 
 .container {
     text-align: center;
+    margin-left: 150px;
 }
 
 .product_price {
@@ -85,4 +86,70 @@ img {
 
 .btn.btn-link:disabled {
   color: black;
+}
+
+.a_v_product {
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.a_v_product a:hover {
+  color: rgb(255, 153, 0);
+}
+
+.a_m_product {
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.a_m_product a:hover {
+  color: rgb(255, 153, 0);
+}
+
+.add_prod {
+  font-size: 20px;
+  text-align: left;
+  margin-left: 0px;
+  text-decoration: underline;
+  color:#ffffff;
+}
+
+.add_prod a:hover {
+  color: rgb(255, 153, 0);
+}
+
+.new_prod_btn {
+  background-color: rgb(80,200,120);
+  border-radius: 4px;
+  width: 220px;
+  height: 50px;
+}
+
+.filter_by_cat {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px; 
+  position: absolute; 
+  z-index: 1; 
+  top: 550px; 
+  left: 145px;
+  background-color: white;
+  overflow-x: hidden; 
+  padding-top: 10px;
+}
+
+.sidenav a {
+  color: black;
+  font-size: 15px;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+}
+
+.sidenav a:hover {
+  color: rgb(255, 153, 0);
 }
