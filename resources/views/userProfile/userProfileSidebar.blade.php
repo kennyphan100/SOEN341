@@ -11,6 +11,8 @@
             @if($user->account_type == "admin")
 
                 <li class="s341-user-profile-header" >Administration</li>
+
+                <li class="s341-user-profile-items"><a href="{{ route('userProfile.show_user_admin_show_product', []) }}"><button type="button" class="btn btn-link">Show Products</button></a></li>
                 
                 <li class="s341-user-profile-items"><a href="{{ route('userProfile.show_user_admin_add_product', []) }}"><button type="button" class="btn btn-link">Add Product</button></a></li>
                 

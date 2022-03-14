@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    public function show_product()
+    {
+        $user = Auth::user();
+        $all_products = DB::table('products')->get();
+
+        return view('userProfile.admin_product_show', ['user' => $user, 'products' => $all_products]);
+    }
+    
     public function show_all_products()
     {
         $user = Auth::user();
