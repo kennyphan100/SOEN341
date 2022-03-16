@@ -6,98 +6,73 @@
 
 <link rel="stylesheet" href="/css/userProfile_order.css">
 
+
 <h1 class="title">Your Orders</h1><br>
 
 <div class="grid-container-outer">
-
     @include('userProfile.userProfileSidebar')
 
-    <div class="container">
+    @if(count($currentOrder) > 0)
+        <div class="container">
+            @php
+                $temp = $currentOrder[0]->id;
+                $index = 0;
+            @endphp
 
-        {{-- @foreach ($user_orders as $order)
+            @while($index <= sizeof($currentOrder)-1 && $temp == $currentOrder[$index]->id)
+                <div class="card space">
+                    <div class="card-header">
+                        <div class="items-center justify-between">
+                            <div class="">Order #{{$currentOrder[$index]->id}}</div>
+                            <div class="">Total Cost: ${{$currentOrder[$index]->order_total}}</div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @for($index; $index <= sizeof($currentOrder)-1; $index++)
+                            @if($currentOrder[$index]->id != $temp)
+                                @php
+                                    $temp = $currentOrder[$index]->id;
+                                    break;
+                                @endphp
+                            @endif
+                            <!-- A single product -->
+                            <div class="item">
+                                <!-- Product Image -->
+                                <div class="item-image">
+                                    <img src="{{ URL::asset('images/'. $currentOrder[$index]->image);}}" alt="..." />
+                                </div>
 
-        <div class="order_form">
-            <form>
-                <div class="grid-container-inner">
-                    <div class="order_section_1">
-                        <div class="form-group row">
-                            <label for="product_name" class="col-sm-2 col-form-label">Product Name</label>
-                            <div class="col-sm-10">
-                                <label id="product_name" class="col-sm-2 col-form-label">{{$product_info[0]->name}}</label>
+                                <!-- Product Description -->
+                                <div class="item-description">
+                                    <span>{{ $currentOrder[$index]->name }}</span>
+                                </div>
+
+                                <!-- Product Quantity -->
+                                <div class="item-quantity">
+                                    Quantity: {{$currentOrder[$index]->product_quantity}}
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="total_price" class="col-sm-2 col-form-label">Total Price</label>
-                            <div class="col-sm-10">
-                                <label id="total_price" class="col-sm-2 col-form-label">{{$order->totalprice}}</label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="status" class="col-sm-2 col-form-label">Status</label>
-                            <div class="col-sm-10">
-                                <label id="status" class="col-sm-2 col-form-label">{{$order->status}}</label>
-                            </div>
-                        </div>
+                            <!-- End of a product -->
+                        @endfor
                     </div>
-                    <div class="order_section_2_1">
-                        <div class="form-group row">
-                            <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
-                            <div class="col-sm-10">
-                                <label id="firstname" class="col-sm-2 col-form-label">{{$order->firstname}}</label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
-                            <div class="col-sm-10">
-                                <label id="lastname" class="col-sm-2 col-form-label">{{$order->lastname}}</label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="address" class="col-sm-2 col-form-label">Address</label>
-                            <div class="col-sm-10">
-                                <label id="Address" class="col-sm-2 col-form-label">{{$order->address}} {{$order->address2}}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order_section_2_2">
-                        <div class="form-group row">
-                            <label for="state" class="col-sm-2 col-form-label">State / Province</label>
-                            <div class="col-sm-10">
-                                <label id="state" class="col-sm-2 col-form-label">{{$order->state_province}}</label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="country" class="col-sm-2 col-form-label">Country</label>
-                            <div class="col-sm-10">
-                                <label id="country" class="col-sm-2 col-form-label">{{$order->country}}</label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="zipcode" class="col-sm-2 col-form-label">Zipcode</label>
-                            <div class="col-sm-10">
-                                <label id="zipcode" class="col-sm-2 col-form-label">{{$order->zipcode}}</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order_section_3">
-                        <div class="form-group row">
-                            <label for="payment_method" class="col-sm-2 col-form-label">Payment Method</label>
-                            <div class="col-sm-10">
-                                <label id="payment_method" class="col-sm-2 col-form-label">{{$order->payment_method}}</label>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="credit_card_num" class="col-sm-2 col-form-label">Credit Card</label>
-                            <div class="col-sm-10">
-                                <label id="credit_card_num" class="col-sm-2 col-form-label">{{$order->credit_card_number}}</label>
-                            </div>
-                        </div>
+                    <div class="card-footer">
+                        <form action="{{ route('userProfile.order_update') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="order_id" value="{{ $currentOrder[$index-1]->id }}">
+                            <button class="btn btn-danger" type="submit" id="cancel_order">Cancel Order</button>
+                        </form>
                     </div>
                 </div>
-            </form>
+            @endWhile
+        @else
+            <h1 class="title">
+                You have no pending orders.
+                <img src="/images/pepe_crying.png" alt="" width="50px" height="50px">
+            </h1>
         </div>
-        @endforeach --}}
-    </div>
+    @endif
+</div>
 </div>
 
 @endsection

@@ -34,7 +34,17 @@ class UserProfileController extends Controller
         // $debug_user_orders = null;
         // $debug_user_orders = $user_orders;
 
-        return view('userProfile.orders', ['user'=> $user]);
+        $currentOrder = DB::table('orders')
+                                ->join('order_products', 'orders.id', '=', 'order_products.order_id')
+                                ->join('products', 'products.id', '=', 'order_products.product_id')
+                                ->select('products.name', 'orders.order_total', 'order_products.product_quantity', 'orders.id', 'products.image')
+                                ->where('orders.user_id', $user->id)
+                                ->where('orders.cancelled', 'NO')
+                                ->get();
+        
+        
+
+        return view('userProfile.orders', ['user'=> $user, 'currentOrder'=>$currentOrder]);
 
         // return view('userProfile.orders', ['debug_user_orders' => $debug_user_orders, 'user' => $user, 'user_orders' => $user_orders, 'product_info' => $product_info]);
     }
@@ -61,5 +71,23 @@ class UserProfileController extends Controller
         // $debug_user_payments = null;
 
         return view('userProfile.admin', ['user' => $user]);
+    }
+
+    public function update_orders(Request $request){
+        $user = Auth::user();
+        $order_id = $request->input('order_id');
+
+        DB::table('orders')->where('id', $order_id)->update(array('cancelled' => 'YES'));
+
+        $currentOrder = DB::table('orders')
+                                ->join('order_products', 'orders.id', '=', 'order_products.order_id')
+                                ->join('products', 'products.id', '=', 'order_products.product_id')
+                                ->select('products.name', 'orders.order_total', 'order_products.product_quantity', 'orders.id', 'products.image')
+                                ->where('orders.user_id', $user->id)
+                                ->where('orders.cancelled', 'NO')
+                                ->get();
+
+        return view('userProfile.orders', ['user'=> $user, 'currentOrder'=>$currentOrder]);
+
     }
 }
