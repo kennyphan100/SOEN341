@@ -46,6 +46,7 @@ Route::get('/categories/{id}/{sort_type}', [CategoriesController::class, 'show']
 Route::get('/userProfile_info', [UserProfileController::class, 'show_info'])->name('userProfile.show_user_information');
 
 Route::get('/userProfile_order', [UserProfileController::class, 'show_orders'])->name('userProfile.show_user_orders');
+Route::post('/userProfile_order', [UserProfileController::class, 'update_orders'])->name('userProfile.order_update');
 
 Route::get('/userProfile_payment', [UserProfileController::class, 'show_payments'])->name('userProfile.show_user_payments');
 
