@@ -54,7 +54,7 @@ class OrderController extends Controller
         }
         
         Cart::destroy(); //empties the cart
-        return view('order.orderMade');
+        return view('order.orderMade', ['last_id' => $order_id]);
     }
 }
 
