@@ -11,7 +11,7 @@
     <h1 class="title">All Products</h1><br>
 
     
-    <h2 class="add_prod"><button class="new_prod_btn"><a href="">Add Product</a></button><br><br></h2>
+    <h2 class="add_prod"><button class="new_prod_btn"><a href="{{ route('userProfile.show_user_admin_add_product', []) }}">Add Product</a></button><br><br></h2>
 
     
 
@@ -26,7 +26,7 @@
         <h2 class = "cat_text"><a href="">Grocery</a></h2>
     </div>
 
-    <div class="container">
+    <div class="container body-data">
 
         @if(session('status'))
         <div class="alert alert-success">

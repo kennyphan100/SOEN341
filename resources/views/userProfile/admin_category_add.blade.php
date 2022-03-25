@@ -14,17 +14,17 @@
 
     @include('userProfile.userProfileSidebar')
 
-    <div class="container">
-    <div class="product_add_form">
-            <form>
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <input type="text" class="form-control" id="category" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+
+        <div class="product_add_form body-data">
+                <form>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <input type="text" class="form-control" id="add_category_field" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
         </div>
-    </div>
+    
 </div>
 
 @endsection
