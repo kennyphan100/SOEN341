@@ -23,7 +23,7 @@
       </ul>
     </ul>
   </div>
-  <div class="container">
+  <div class="container products-display">
 
     @if(session('status'))
     <div class="alert alert-success">
