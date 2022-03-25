@@ -5,7 +5,9 @@
     letter-spacing: 2px;
 }
 
-
+.banner_bg_main {
+  margin-bottom: 50px;
+}
 
 .grid-container-outer {
     display: grid;
@@ -68,4 +70,8 @@
   .order_form{
     padding-bottom: 20px;
     border-bottom: inset;
+  }
+
+  .label-text {
+    font-weight: bold;
   }

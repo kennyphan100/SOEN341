@@ -5,7 +5,6 @@
 .title {
     color:black;
     text-align: center;
-    text-decoration: underline;
     margin-bottom: 30px;
     font-size: 3em;
     letter-spacing: 2px;
@@ -114,15 +113,20 @@ img {
   color:#ffffff;
 }
 
-.add_prod a:hover {
+/* .add_prod a:hover {
   color: rgb(255, 153, 0);
-}
+  background-color: red;
+} */
 
 .new_prod_btn {
   background-color: rgb(80,200,120);
   border-radius: 4px;
   width: 220px;
   height: 50px;
+}
+
+.new_prod_btn:hover {
+  background-color: green;
 }
 
 .filter_by_cat {
@@ -152,4 +156,18 @@ img {
 
 .sidenav a:hover {
   color: rgb(255, 153, 0);
+}
+
+.body-data {
+  text-align: center;
+}
+
+#add_category_field {
+  text-align: center;
+  margin:auto;
+  width: 40%;
+}
+
+.manage-category {
+  margin: 15px;
 }

@@ -23,7 +23,7 @@
     @endforeach
 @endif
 
-<div class="grid-container-outer">
+<div class="grid-container-outer body-data">
 
     @include('userProfile.userProfileSidebar')
 
