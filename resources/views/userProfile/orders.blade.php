@@ -25,6 +25,7 @@
                         <div class="items-center justify-between">
                             <div class="">Order #{{$currentOrder[$index]->id}}</div>
                             <div class="">Total Cost: ${{$currentOrder[$index]->order_total}}</div>
+                            <div>Order Placed: {{$currentOrder[$index]->order_created_at}}</div>
                         </div>
                     </div>
                     <div class="card-body">

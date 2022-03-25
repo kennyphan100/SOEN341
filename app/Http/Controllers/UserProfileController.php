@@ -37,7 +37,7 @@ class UserProfileController extends Controller
         $currentOrder = DB::table('orders')
                                 ->join('order_products', 'orders.id', '=', 'order_products.order_id')
                                 ->join('products', 'products.id', '=', 'order_products.product_id')
-                                ->select('products.name', 'orders.order_total', 'order_products.product_quantity', 'orders.id', 'products.image')
+                                ->select('products.name', 'orders.order_total', 'order_products.product_quantity', 'orders.id', 'products.image', 'orders.order_created_at')
                                 ->where('orders.user_id', $user->id)
                                 ->where('orders.cancelled', 'NO')
                                 ->get();

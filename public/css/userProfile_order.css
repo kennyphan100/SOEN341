@@ -5,6 +5,10 @@
     letter-spacing: 2px;
 }
 
+.banner_bg_main {
+    margin-bottom: 50px;
+}
+
 .grid-container-outer {
     display: grid;
     grid-template-columns: 15% auto;
