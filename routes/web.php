@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SearchBarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,5 @@ Route::get('/products/{id}', [ProductsController::class, 'show'])->name('product
 
 Route::get('/checkout', [OrderController::class, 'index'])->middleware(['auth'])->name('order.index'); //Checkout index
 Route::post('/orderplaced', [OrderController::class, 'orderPlaced'])->name('order.orderPlaced'); //success on the order
+
+Route::get('/search', [SearchBarController::class, 'search'])->name('layouts.base');// Search for products
