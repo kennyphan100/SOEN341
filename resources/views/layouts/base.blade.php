@@ -66,14 +66,18 @@
                      </ul>
                   </div>
                   <div class="main">
-                     <div class="input-group" id="search-bar">
-                        <input type="text" class="form-control" placeholder="Search for item">
-                        <div class="input-group-append">
-                           <button class="btn btn-secondary" type="button" style="background-color: rgb(9, 29, 64); border-color:rgb(9, 29, 64); ">
-                           <i class="fa fa-search"></i>
-                           </button>
+                     <!-- Search bar -->
+                     <form class="" type="GET" action="{{ url('/search') }}">
+                        <div class="input-group" id="search-bar">
+                           <input type="text" name="searchQuery" class="form-control" placeholder="Search for item">
+                           <div class="input-group-append">
+                              <button class="btn btn-secondary" type="submit" style="background-color: rgb(9, 29, 64); border-color:rgb(9, 29, 64); ">
+                              <i class="fa fa-search"></i>
+                              </button>
+                           </div>
                         </div>
-                     </div>
+                     <form>
+                     <!-- End of search bar -->
                   </div>
                   <div class="header_box">
                      <div class="login_menu">
