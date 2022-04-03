@@ -11,11 +11,11 @@ class SearchBarController extends Controller
     public function search(){
         $cart = Cart::content();
 
-        $searchQuery = $_GET['searchQuery'];
+        $searchQuery = $_GET['searchQuery'] ?? "";
 
         $searchResults = DB::table('products')->where('name', 'LIKE', '%'.$searchQuery.'%')
                                               ->orWhere('category', 'LIKE', '%'.$searchQuery.'%')->get();
 
-        return view('categories.show', ['products'=> $searchResults, 'category' => count($searchResults)." item(s) found", 'cart' => $cart]);
+        return view('searchItems.show', ['products'=> $searchResults, 'category' => count($searchResults)." item(s) found for \"$searchQuery\"", 'cart' => $cart]);
     }
 }

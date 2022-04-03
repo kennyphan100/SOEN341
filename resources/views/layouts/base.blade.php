@@ -76,7 +76,7 @@
                               </button>
                            </div>
                         </div>
-                     <form>
+                     </form>
                      <!-- End of search bar -->
                   </div>
                   <div class="header_box">
