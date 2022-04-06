@@ -58,8 +58,8 @@
                            <p class="price_text">Price  <span class="product_price">$11.99</span></p>
                            <div class="product_img"><img src="{{ asset('images/the_da_vinci_code.jpg') }}"></div>
                            <div class="btn_main">
-                              <div class="buy_bt"><a href="#">Buy Now</a></div>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
+                              <div class="buy_bt"><a href="/products/24">Buy Now</a></div>
+                              <div class="seemore_bt"><a href="/categories/Books">See More</a></div>
                            </div>
                         </div>
                      </div>
@@ -70,7 +70,7 @@
                            <div class="product_img"><img src="{{ asset('images/fifty_shades_of_grey.jpg') }}"></div>
                            <div class="btn_main">
                               <div class="buy_bt"><a href="#">Buy Now</a></div>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
+                              <div class="seemore_bt"><a href="/categories/Books">See More</a></div>
                            </div>
                         </div>
                      </div>
@@ -80,8 +80,8 @@
                            <p class="price_text">Price  <span class="product_price">$9.99</span></p>
                            <div class="product_img"><img src="{{ asset('images/twilight.jpg') }}"></div>
                            <div class="btn_main">
-                              <div class="buy_bt"><a href="#">Buy Now</a></div>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
+                              <div class="buy_bt"><a href="/products/54">Buy Now</a></div>
+                              <div class="seemore_bt"><a href="/categories/Books">See More</a></div>
                            </div>
                         </div>
                      </div>
@@ -108,7 +108,7 @@
                            <div class="product_img"><img src={{ asset('images/ps5.jpg') }}></div>
                            <div class="btn_main">
                               <div class="buy_bt"><a href="#">Buy Now</a></div>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
+                              <div class="seemore_bt"><a href="/categories/Electronics">See More</a></div>
                            </div>
                         </div>
                      </div>
@@ -118,8 +118,8 @@
                            <p class="price_text">Price  <span class="product_price">$99.99</span></p>
                            <div class="product_img"><img src={{ asset('images/google_home.jpg') }}></div>
                            <div class="btn_main">
-                              <div class="buy_bt"><a href="#">Buy Now</a></div>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
+                              <div class="buy_bt"><a href="/products/84">Buy Now</a></div>
+                              <div class="seemore_bt"><a href="/categories/Electronics">See More</a></div>
                            </div>
                         </div>
                      </div>
@@ -129,8 +129,8 @@
                            <p class="price_text">Price  <span class="product_price">$299.99</span></p>
                            <div class="product_img"><img src={{ asset('images/airpods.jpg') }}></div>
                            <div class="btn_main">
-                              <div class="buy_bt"><a href="#">Buy Now</a></div>
-                              <div class="seemore_bt"><a href="#">See More</a></div>
+                              <div class="buy_bt"><a href="/products/64">Buy Now</a></div>
+                              <div class="seemore_bt"><a href="/categories/Electronics">See More</a></div>
                            </div>
                         </div>
                      </div>
