@@ -35,9 +35,9 @@ class UserProfileController extends Controller
         // $debug_user_orders = $user_orders;
 
         $currentOrder = DB::table('orders')
-                                ->join('order_products', 'orders.id', '=', 'order_products.order_id')
-                                ->join('products', 'products.id', '=', 'order_products.product_id')
-                                ->select('products.name', 'orders.order_total', 'order_products.product_quantity', 'orders.id', 'products.image', 'orders.order_created_at')
+                                ->join('order_product', 'orders.id', '=', 'order_product.order_id')
+                                ->join('products', 'products.id', '=', 'order_product.product_id')
+                                ->select('products.name', 'orders.order_total', 'order_product.product_quantity', 'orders.id', 'products.image', 'orders.created_at')
                                 ->where('orders.user_id', $user->id)
                                 ->where('orders.cancelled', 'NO')
                                 ->get();
@@ -53,11 +53,13 @@ class UserProfileController extends Controller
     {
         $user = Auth::user();
 
-        $user_payments = DB::table('test_payments')->where('user_id', $user->id)->get();
-
-        $debug_user_payments = $user_payments;
+        //$user_payments = DB::table('test_payments')->where('user_id', $user->id)->get();
+        $user_payments = null;
+        
+        //$debug_user_payments = $user_payments;
         $debug_user_payments = null;
 
+        //return view('userProfile.payments', ['debug_user_payments' => $debug_user_payments, 'user' => $user, 'user_payments' => $user_payments]);
         return view('userProfile.payments', ['debug_user_payments' => $debug_user_payments, 'user' => $user, 'user_payments' => $user_payments]);
     }
 
@@ -80,9 +82,9 @@ class UserProfileController extends Controller
         DB::table('orders')->where('id', $order_id)->update(array('cancelled' => 'YES'));
 
         $currentOrder = DB::table('orders')
-                                ->join('order_products', 'orders.id', '=', 'order_products.order_id')
-                                ->join('products', 'products.id', '=', 'order_products.product_id')
-                                ->select('products.name', 'orders.order_total', 'order_products.product_quantity', 'orders.id', 'products.image', 'orders.order_created_at')
+                                ->join('order_product', 'orders.id', '=', 'order_product.order_id')
+                                ->join('products', 'products.id', '=', 'order_product.product_id')
+                                ->select('products.name', 'orders.order_total', 'order_product.product_quantity', 'orders.id', 'products.image', 'orders.created_at')
                                 ->where('orders.user_id', $user->id)
                                 ->where('orders.cancelled', 'NO')
                                 ->get();

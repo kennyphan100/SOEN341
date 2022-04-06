@@ -25,7 +25,7 @@
                         <div class="items-center justify-between">
                             <div class="">Order #{{$currentOrder[$index]->id}}</div>
                             <div class="">Total Cost: ${{$currentOrder[$index]->order_total}}</div>
-                            <div>Order Placed: {{$currentOrder[$index]->order_created_at}}</div>
+                            <div>Order Placed: {{$currentOrder[$index]->created_at}}</div>
                         </div>
                     </div>
                     <div class="card-body">
@@ -67,10 +67,10 @@
                 </div>
             @endWhile
         @else
-            <h1 class="title">
+            <h4>
                 You have no pending orders.
                 <img src="/images/pepe_crying.png" alt="" width="50px" height="50px">
-            </h1>
+            </h4>
         </div>
     @endif
 </div>

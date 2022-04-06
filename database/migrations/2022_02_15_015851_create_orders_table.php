@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateOrdersTable extends Migration
 {
@@ -25,7 +26,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_total', 10);
             $table->string('cancelled', 5);
             $table->string('city', 144);
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
