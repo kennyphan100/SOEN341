@@ -21,7 +21,7 @@ use App\Http\Controllers\SearchBarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//test
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/dashboard', function () {
