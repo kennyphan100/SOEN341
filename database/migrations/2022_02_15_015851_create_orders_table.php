@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            //$table->id()->primary();
+            $table->integer('id')->primary();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('shipping_address', 144);
             $table->string('postal_code', 7);
