@@ -21,7 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('postal_code', 7);
             $table->string('credit_card_number', 19);
             $table->string('name_on_card', 144);
-            $table->integer('cc_security_code');
+            $table->integer('cc_security_code', false)->length(3);
             $table->string('order_total', 10);
             $table->string('cancelled', 5);
             $table->string('city', 144);
