@@ -15,19 +15,15 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('product_id');
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('address');
-            $table->string('address2');
-            $table->string('country');
-            $table->string('state_province');
-            $table->string('zipcode');
-            $table->string('payment_method');
-            $table->integer('credit_card_number');
-            $table->string('status');
-            $table->double('totalprice');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('shipping_address', 144);
+            $table->string('postal_code', 7);
+            $table->string('credit_card_number', 19);
+            $table->string('name_on_card', 144);
+            $table->integer('cc_security_code', 3);
+            $table->string('order_total', 10);
+            $table->string('cancelled', 5);
+            $table->string('city', 144);
             $table->timestamps();
         });
     }
