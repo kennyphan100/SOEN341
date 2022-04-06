@@ -14,13 +14,13 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->id();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('shipping_address', 144);
             $table->string('postal_code', 7);
             $table->string('credit_card_number', 19);
             $table->string('name_on_card', 144);
-            $table->integer('cc_security_code', 3);
+            $table->integer('cc_security_code');
             $table->string('order_total', 10);
             $table->string('cancelled', 5);
             $table->string('city', 144);
