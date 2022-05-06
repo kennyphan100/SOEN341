@@ -1,6 +1,7 @@
 # SOEN341
 
-Website: http://soen341-project.herokuapp.com/
+Website Demo: https://user-images.githubusercontent.com/66841718/167171561-e0c08155-175b-4991-9301-5cec66a5ef87.mp4
+
 
 ## Objective
 Implement a simplified version of Amazon.
